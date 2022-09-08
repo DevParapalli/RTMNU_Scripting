@@ -1,0 +1,264 @@
+{
+    "name": "NAME STUDENT",
+    "mother_name": "MOMMY",
+    "prn": "PROVISIONAL",
+    "exam_category": "REGULAR",
+    "roll_number": "690420",
+    "date": "23-05-2021",
+    "center_code": "215",
+    "medium": "ENGLISH",
+    "pl": "529/262",
+    "college": "SOME COLLEGE, AREA",
+    "result": [
+        {
+            "assessment_method": "theory",
+            "abbreviation": "MATH-I",
+            "subject_name": "MATHEMATICS-I",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "70",
+                "marks_obtained": "61"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "30",
+                "marks_obtained": "29"
+            },
+            "total": {
+                "min_marks": "45",
+                "max_marks": "100",
+                "marks_obtained": "90"
+            },
+            "credits": "4",
+            "grade": "AB",
+            "grade_point": "9",
+            "grade_point_value": "36"
+        },
+        {
+            "assessment_method": "theory",
+            "abbreviation": "APHY",
+            "subject_name": "APPLIED PHYSICS",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "70",
+                "marks_obtained": "67"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "30",
+                "marks_obtained": "28"
+            },
+            "total": {
+                "min_marks": "45",
+                "max_marks": "100",
+                "marks_obtained": "95"
+            },
+            "credits": "4",
+            "grade": "AA",
+            "grade_point": "10",
+            "grade_point_value": "40"
+        },
+        {
+            "assessment_method": "theory",
+            "abbreviation": "EAE",
+            "subject_name": "ENERGY AND ENVIRONMENT",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "70",
+                "marks_obtained": "67"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "30",
+                "marks_obtained": "30"
+            },
+            "total": {
+                "min_marks": "45",
+                "max_marks": "100",
+                "marks_obtained": "97"
+            },
+            "credits": "3",
+            "grade": "AA",
+            "grade_point": "10",
+            "grade_point_value": "30"
+        },
+        {
+            "assessment_method": "theory",
+            "abbreviation": "CSK",
+            "subject_name": "COMMUNICATION SKILLS",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "35",
+                "marks_obtained": "33"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "15",
+                "marks_obtained": "14"
+            },
+            "total": {
+                "min_marks": "23",
+                "max_marks": "50",
+                "marks_obtained": "47"
+            },
+            "credits": "2",
+            "grade": "AA",
+            "grade_point": "10",
+            "grade_point_value": "20"
+        },
+        {
+            "assessment_method": "theory",
+            "abbreviation": "EGRA",
+            "subject_name": "ENGINEERING GRAPHICS",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "35",
+                "marks_obtained": "30"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "15",
+                "marks_obtained": "14"
+            },
+            "total": {
+                "min_marks": "23",
+                "max_marks": "50",
+                "marks_obtained": "44"
+            },
+            "credits": "1",
+            "grade": "AB",
+            "grade_point": "9",
+            "grade_point_value": "9"
+        },
+        {
+            "assessment_method": "theory",
+            "abbreviation": "BCME",
+            "subject_name": "BASIC OF CIVIL AND MECHANICAL ENGINEERING",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "--",
+                "marks_obtained": "--"
+            },
+            "college_assessment": {
+                "min_marks": "23",
+                "max_marks": "50",
+                "marks_obtained": "48"
+            },
+            "total": {
+                "min_marks": "23",
+                "max_marks": "50",
+                "marks_obtained": "48"
+            },
+            "credits": "0",
+            "grade": "AA",
+            "grade_point": "10",
+            "grade_point_value": "0"
+        },
+        {
+            "assessment_method": "practical",
+            "abbreviation": "APHY-P",
+            "subject_name": "APPLIED PHYSICS LAB",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "25",
+                "marks_obtained": "21"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "25",
+                "marks_obtained": "23"
+            },
+            "total": {
+                "min_marks": "25",
+                "max_marks": "50",
+                "marks_obtained": "44"
+            },
+            "credits": "2",
+            "grade": "AB",
+            "grade_point": "9",
+            "grade_point_value": "14"
+        },
+        {
+            "assessment_method": "practical",
+            "abbreviation": "EAE-P",
+            "subject_name": "ENERGY AND ENVIRONMENT LAB",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "25",
+                "marks_obtained": "23"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "25",
+                "marks_obtained": "24"
+            },
+            "total": {
+                "min_marks": "25",
+                "max_marks": "50",
+                "marks_obtained": "47"
+            },
+            "credits": "1",
+            "grade": "AA",
+            "grade_point": "10",
+            "grade_point_value": "10"
+        },
+        {
+            "assessment_method": "practical",
+            "abbreviation": "CSK-P",
+            "subject_name": "COMMUNICATION SKILLS LAB",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "25",
+                "marks_obtained": "24"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "25",
+                "marks_obtained": "23"
+            },
+            "total": {
+                "min_marks": "25",
+                "max_marks": "50",
+                "marks_obtained": "47"
+            },
+            "credits": "1",
+            "grade": "AA",
+            "grade_point": "10",
+            "grade_point_value": "10"
+        },
+        {
+            "assessment_method": "practical",
+            "abbreviation": "EGRA-P",
+            "subject_name": "ENGINEERING GRAPHICS LAB",
+            "university_assessment": {
+                "min_marks": "--",
+                "max_marks": "25",
+                "marks_obtained": "17"
+            },
+            "college_assessment": {
+                "min_marks": "--",
+                "max_marks": "25",
+                "marks_obtained": "22"
+            },
+            "total": {
+                "min_marks": "25",
+                "max_marks": "50",
+                "marks_obtained": "39"
+            },
+            "credits": "2",
+            "grade": "BB",
+            "grade_point": "8",
+            "grade_point_value": "16"
+        }
+    ],
+    "summary": {
+        "incentive": "--",
+        "total_credits": "20",
+        "sum_grade_point_value": "185",
+        "sgpa": "9.46",
+        "out_of": "10",
+        "total_marks_obtained": "550",
+        "out_of_marks": "600",
+        "result": "Pass"
+    }
+}

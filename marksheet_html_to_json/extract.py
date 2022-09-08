@@ -113,6 +113,11 @@ def convert(html: str) -> dict:
 
 if __name__ == "__main__":
     import pathlib
+    import glob
     current_dir = pathlib.Path(__file__).parent.absolute()
-    data = convert(open(str(current_dir / 'sample.html')).read())
-    print(json.dumps(data, indent=4))
+    html_files = glob.glob(str(current_dir) + '/html/*.html')
+    for html_file in html_files:
+        with open(html_file, encoding='UTF-8') as inf:
+            with open(current_dir / 'json' / f"{pathlib.Path(html_file).stem}.json", 'w') as ouf:
+                ouf.write(json.dumps(convert(inf.read())))
+                print(f"processed {html_file.split('/')[-1]}")

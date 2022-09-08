@@ -130,9 +130,16 @@ dmypy.json
 
 # Inputs 
 *.pdf
+!sample.pdf
 *.html
+!sample.html
+# Sample input for reference
+
 
 # Outputs
 *.json
+!sample.json
 *.csv
+!sample.json
 *.fmt
+!sample.fmt

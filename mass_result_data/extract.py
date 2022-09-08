@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 from bs4 import BeautifulSoup
 
 
@@ -31,27 +32,38 @@ def init():
     return driver
 
 
-def extract_html_from_seat_numbers(driver: webdriver.Chrome, seats: list[int|str]):
+def extract_html_from_seat_numbers(driver: webdriver.Chrome, seats: list[int|str], throw_id: int = 000000):
     # Extracts the html from the driver, and yeilds to the caller.
     # The driver should be initialized with init().
 
     seat_no_input = driver.find_element(By.ID, 'ctl00_ContentPlaceHolder1_TxtPrn')
     seat_no_input.clear()
-
-    for id in [000000] + seats:
+    seat_no_input.send_keys(str(throw_id))
+    # TODO: Assign default id
+    
+    for id in [throw_id] + seats:
         seat_no_input = driver.find_element(By.ID, 'ctl00_ContentPlaceHolder1_TxtPrn')
         seat_no_input.clear()
         seat_no_input.send_keys(id)
-        submit_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'ctl00_ContentPlaceHolder1_btnSearch')))
+        submit_button = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, 'ctl00_ContentPlaceHolder1_btnSearch')))
         submit_button.click()
-        table_thing = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#ctl00_ContentPlaceHolder1_oGridViewExmdetails > tbody > tr:nth-child(2) > td:nth-child(5) > a')))
-        table_thing.click()
-        required_thing = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'divHTMLPrint')))
-        if id == 000000:
-            # Remove the data from the initial thing, it usually contains something else
-            yield None, None
+        try:
+            table_thing = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#ctl00_ContentPlaceHolder1_oGridViewExmdetails > tbody > tr:nth-child(2) > td:nth-child(5) > a')))
+            table_thing.click()
+            required_thing = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, 'divHTMLPrint')))
+            if id == throw_id:
+                # Remove the data from the initial thing, it usually contains something else
+                yield None, None
 
-        yield required_thing.get_attribute('outerHTML'), id
+            yield required_thing.get_attribute('outerHTML'), id
+        except TimeoutException:
+            try:
+                result_not_declared = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, 'ctl00_ContentPlaceHolder1_lblErrorMessage')))
+                result_not_declared.click()
+            except TimeoutException:
+                print('TimeoutException')
+            finally:
+                yield None, id
 
 
 
@@ -61,7 +73,7 @@ def cleanup(driver: webdriver.Chrome):
     
 
 
-def convert(html: str) -> dict:
+def convert_part_result(html: str) -> dict:
     data = {}
 
     soup = BeautifulSoup(html, 'html5lib')
@@ -113,9 +125,9 @@ def convert(html: str) -> dict:
     data['result'] = []
     for result_row in data['__raw_result']:
         am = 'undef'
-        if 'TH' in result_row[2]:
+        if 'th' in result_row[2].lower():
             am = 'theory'
-        elif 'PR' in result_row[2]:
+        elif 'pr' in result_row[2].lower():
             am = 'practical'
 
         data['result'].append({

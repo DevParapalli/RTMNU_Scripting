@@ -41,3 +41,4 @@ for i in range(num_pages):
 
 with open(str(current_dir / 'result.json'), 'w') as f:
     json.dump(DATA, f)
+    print(len(DATA.keys()))
