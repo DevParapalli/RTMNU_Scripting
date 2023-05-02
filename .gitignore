@@ -143,3 +143,6 @@ dmypy.json
 !sample.json
 *.fmt
 !sample.fmt
+
+*.png
+*.zip
