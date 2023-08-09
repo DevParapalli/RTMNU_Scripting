@@ -9,7 +9,7 @@ current_dir = pathlib.Path(__file__).parent.absolute()
 pdf_files = glob.glob(str(current_dir) + "/*.pdf")
 
 # We don't need this file right now.
-z_result = pdf_files.pop()
+# z_result = pdf_files.pop()
 
 # A list to store the data.
 DATA = {}
