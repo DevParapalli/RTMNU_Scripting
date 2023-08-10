@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import json
 
 
-seats = range(oh man, i want gf)
+seats = range(149712, 149788)
 
 current_dir = pathlib.Path(__file__).parent.absolute()
 
@@ -18,7 +18,7 @@ chrome_options.add_experimental_option('prefs', prefs)
 
 with webdriver.Chrome(chrome_options=chrome_options) as driver:
     driver.get('https://rtmnuresults.org/')
-    driver.maximize_window();
+    driver.maximize_window()
     html = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'html')))
     driver.execute_script("document.body.style.zoom='125 %'")
     faculty_select = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'ddlselectfaculty')))
@@ -26,7 +26,9 @@ with webdriver.Chrome(chrome_options=chrome_options) as driver:
     exam_select = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'ddlselectexam')))
     # Select(exam_select).select_by_value('10492')
     # Select(exam_select).select_by_value('10557')
-    Select(exam_select).select_by_value('10510')
+    # Select(exam_select).select_by_value('10510')
+    # Select(exam_select).select_by_value('10514')
+    Select(exam_select).select_by_value('10508')
     roll_no_input = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'txtrollno')))
     roll_no_input.send_keys(str(seats[0]))
     submit_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'imgbtnviewmarksheet')))

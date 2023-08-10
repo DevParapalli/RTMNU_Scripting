@@ -2,9 +2,9 @@ import fitz
 import re
 import json
 
-ROLLNO_REGEX = r"\|15\d\d\d\d"
+ROLLNO_REGEX = r"\|1\d\d\d\d\d"
 NAME_REGEX = r"(?P<_>\|Name\|of\|Student\|:)(?P<name>\|[A-Z|]*\|)(?P<__>|Mother's)"
-doc = fitz.open("CSE.pdf")  # example document
+doc = fitz.open("ETC.pdf")  # example document
 # page = doc[0]  # first page
 # words = page.get_text("words", sort=True)  # extract sorted words
 
@@ -16,5 +16,5 @@ for page in doc:
     name = re.findall(NAME_REGEX, text)[0][1].replace("|", " ").strip()
     LOOKUP[roll] = name
 
-with open("lookup.json", "w") as f:
+with open("lookup-etc.json", "w") as f:
     json.dump(LOOKUP, f)

@@ -1,7 +1,7 @@
 import json
 
-DATA = json.load(open("data.json"))
-LOOKUP = json.load(open("lookup.json"))
+DATA = json.load(open("data-etc.json"))
+LOOKUP = json.load(open("lookup-etc.json"))
 
 MATCHED = []
 for dp in DATA:
@@ -10,4 +10,4 @@ for dp in DATA:
 
 MATCHED.sort(key=lambda x: -x[2])
 
-json.dump(MATCHED, open("matched.json", "w"))
+json.dump(MATCHED, open("matched-etc.json", "w"))
